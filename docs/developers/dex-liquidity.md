@@ -7,9 +7,9 @@ title: Provide liquidity on DEX
 
 ## Overview
 
-Provide liquidity to an existing **liquidity pool** on Pyra Chain DEX using **@pyrachain/damm-sdk**. Adding liquidity involves **creating a position** (price range) and **depositing tokens** into it, earning fees and rewards. The SDK handles **concentrated liquidity**, **dynamic fees**, and **Token-2022** support.
+Provide liquidity to an existing **liquidity pool** on Pyra Chain DEX using **@pyra-chain/cp-amm-sdk**. Adding liquidity involves **creating a position** (price range) and **depositing tokens** into it, earning fees and rewards. The SDK handles **concentrated liquidity**, **dynamic fees**, and **Token-2022** support.
 
-- **SDK**: [@pyrachain/damm-sdk](https://www.npmjs.com/package/@pyrachain/damm-sdk)
+- **SDK**: [@pyra-chain/cp-amm-sdk](https://www.npmjs.com/package/@pyra-chain/cp-amm-sdk)
 - **Network**: Pyra Chain RPC
 - **Requirements**: Existing pool, wallet with tokens A/B, position NFT mint
 
@@ -20,7 +20,7 @@ Provide liquidity to an existing **liquidity pool** on Pyra Chain DEX using **@p
 Install dependencies:
 
 ```
-npm install @pyrachain/damm-sdk @solana/web3.js @solana/spl-token bn.js
+npm install @pyra-chain/cp-amm-sdk @solana/web3.js @solana/spl-token bn.js
 ```
 
 ---
@@ -33,7 +33,7 @@ Initialize CpAmm client from SDK.
 ```javascript
 import { Connection, PublicKey, Keypair } from '@solana/web3.js';
 import BN from 'bn.js';
-import { CpAmm } from '@pyrachain/damm-sdk';
+import { CpAmm } from '@pyra-chain/cp-amm-sdk';
 
 const connection = new Connection('https://rpc.pyrachain.io', 'confirmed');
 const cpAmm = new CpAmm(connection);

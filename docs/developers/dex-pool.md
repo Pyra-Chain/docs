@@ -7,9 +7,9 @@ title: Create DEX pool
 
 ## Overview
 
-Create a **liquidity pool** on the Pyra Chain DEX using the **@pyrachain/damm-sdk** (DAMM SDK). This SDK simplifies pool creation with **concentrated liquidity AMM** (CLMM) mechanics, supporting **Token-2022** and native SOL wrapping. Pools enable trading pairs with initial liquidity, dynamic fees, and position NFTs.
+Create a **liquidity pool** on the Pyra Chain DEX using the **@pyra-chain/cp-amm-sdk** (DAMM SDK). This SDK simplifies pool creation with **concentrated liquidity AMM** (CLMM) mechanics, supporting **Token-2022** and native SOL wrapping. Pools enable trading pairs with initial liquidity, dynamic fees, and position NFTs.
 
-- **SDK**: [@pyrachain/damm-sdk](https://www.npmjs.com/package/@pyrachain/damm-sdk) 
+- **SDK**: [@pyra-chain/cp-amm-sdk](https://www.npmjs.com/package/@pyra-chain/cp-amm-sdk) 
 - **Network**: Pyra Chain RPC
 - **Requirements**: Wallet with $PYRA, token mints for pair (A/B)
 
@@ -20,7 +20,7 @@ Create a **liquidity pool** on the Pyra Chain DEX using the **@pyrachain/damm-sd
 Install the DAMM SDK and dependencies:
 
 ```
-npm install @pyrachain/damm-sdk @solana/web3.js @solana/spl-token bn.js
+npm install @pyra-chain/cp-amm-sdk @solana/web3.js @solana/spl-token bn.js
 ```
 
 ---
@@ -33,8 +33,8 @@ Connect to Pyra Chain and initialize the CpAmm client (from SDK).
 ```javascript
 import { Connection, PublicKey, Keypair } from '@solana/web3.js';
 import BN from 'bn.js';
-import { CpAmm } from '@pyrachain/damm-sdk';  // Core AMM client
-import { getSqrtPriceFromPrice } from '@pyrachain/damm-sdk';  // Price utils
+import { CpAmm } from '@pyra-chain/cp-amm-sdk';  // Core AMM client
+import { getSqrtPriceFromPrice } from '@pyra-chain/cp-amm-sdk';  // Price utils
 
 // Connect to Pyra Chain RPC
 const connection = new Connection('https://rpc.pyrachain.io', 'confirmed');
@@ -175,7 +175,7 @@ console.log('Pool Sqrt Price:', poolState.currentSqrtPrice.toString());
 - **Errors**: Check for zero amounts or invalid prices. Use `getDepositQuote` to validate.  
 - **Fees**: Dynamic (volatility-based) + base fee from config.  
 - **Verification**: View pool on [pyrachain.io/dex](https://pyrachain.io/dex) or explorer.  
-- **Docs**: Full SDK at [npmjs.com/@pyrachain/damm-sdk](https://www.npmjs.com/package/@pyrachain/damm-sdk).
+- **Docs**: Full SDK at [npmjs.com/@pyra-chain/cp-amm-sdk](https://www.npmjs.com/package/@pyra-chain/cp-amm-sdk).
 
 ---
 

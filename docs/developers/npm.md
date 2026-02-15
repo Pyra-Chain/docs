@@ -17,8 +17,8 @@ All packages are **public** (v1.0+), with comprehensive docs and examples.
 
 | Package | Version | Description | Install |
 |---------|---------|-------------|---------|
-| **@pyrachain/damm-sdk** | [1.0.0](https://www.npmjs.com/package/@pyrachain/damm-sdk) | **DAMM SDK** for creating and managing **concentrated liquidity pools** on Pyra Chain DEX. Supports **Token-2022**, dynamic fees (volatility-based), base fee schedulers (linear/exponential), and position NFTs. Key functions: `createPool`, `getDepositQuote`, `getUnClaimReward`. Ideal for DeFi dApps and LP providers. | `npm install @pyrachain/damm-sdk` |
-| **@pyrachain/dynamic-bonding-curve-sdk** | [1.0.3](https://www.npmjs.com/package/@pyrachain/dynamic-bonding-curve-sdk) | **Dynamic Bonding Curve SDK** for launching tokens with customizable curves, vesting, and migration options. Features **config creation** (`createConfig`), fee params (`getDynamicFeeParams`), locked vesting (`getLockedVestingParams`), and quote reserves. Perfect for fair token distributions. | `npm install @pyrachain/dynamic-bonding-curve-sdk` |
+| **@pyra-chain/cp-amm-sdk** | [1.0.1](https://www.npmjs.com/package/@pyra-chain/cp-amm-sdk) | **DAMM SDK** for creating and managing **concentrated liquidity pools** on Pyra Chain DEX. Supports **Token-2022**, dynamic fees (volatility-based), base fee schedulers (linear/exponential), and position NFTs. Key functions: `createPool`, `getDepositQuote`, `getUnClaimReward`. Ideal for DeFi dApps and LP providers. | `npm install @pyra-chain/cp-amm-sdk` |
+| **@pyra-chain/dynamic-bonding-curve-sdk** | [1.0.1](https://www.npmjs.com/package/@pyra-chain/dynamic-bonding-curve-sdk) | **Dynamic Bonding Curve SDK** for launching tokens with customizable curves, vesting, and migration options. Features **config creation** (`createConfig`), fee params (`getDynamicFeeParams`), locked vesting (`getLockedVestingParams`), and quote reserves. Perfect for fair token distributions. | `npm install @pyra-chain/dynamic-bonding-curve-sdk` |
 
 ---
 
@@ -26,7 +26,7 @@ All packages are **public** (v1.0+), with comprehensive docs and examples.
 
 ### DAMM SDK Example (Create Pool)
 ```javascript
-import { CpAmm } from '@pyrachain/damm-sdk';
+import { CpAmm } from '@pyra-chain/cp-amm-sdk';
 
 const cpAmm = new CpAmm(connection);  // Pyra Chain RPC
 const createPoolTx = await cpAmm.createPool({
@@ -39,7 +39,7 @@ const createPoolTx = await cpAmm.createPool({
 
 ### Bonding Curve SDK Example (Create Config)
 ```javascript
-import { createConfig } from '@pyrachain/dynamic-bonding-curve-sdk';
+import { createConfig } from '@pyra-chain/dynamic-bonding-curve-sdk';
 
 const tx = await createConfig({
   payer: wallet.publicKey,
